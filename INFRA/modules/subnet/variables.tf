@@ -29,4 +29,3 @@ variable "type" {
   description = "Tipo da subnet (public/private)"
   type        = string
 }
-
