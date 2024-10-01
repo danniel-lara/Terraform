@@ -6,6 +6,6 @@ resource "aws_vpc" "prod" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "${var.region}-vpc"
+    Name = "${var.vpc_name}-VPC"
   }
 }

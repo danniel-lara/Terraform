@@ -29,3 +29,8 @@ variable "type" {
   description = "Tipo da subnet (public/private)"
   type        = string
 }
+
+variable "vpc_name" {
+  description = "Nome da VPC para definir as tags das subnets e tabelas de rotas"
+  type        = string
+}

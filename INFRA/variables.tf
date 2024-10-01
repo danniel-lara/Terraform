@@ -10,6 +10,11 @@ variable "vpc_cidr" {
   type        = string
 }
 
+variable "vpc_name" {
+  description = "Nome da VPC a ser criada"
+  type        = string
+}
+
 variable "availability_zones" {
   description = "Lista das Availability Zones a serem utilizadas"
   type        = list(string)

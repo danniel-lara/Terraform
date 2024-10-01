@@ -9,6 +9,11 @@ terraform {
 
 provider "aws" {
   region = var.region
+  default_tags {
+   tags = {
+     DeployBy = "Terraform"
+   }
+  }
 }
 
 # Módulo VPC
@@ -16,6 +21,7 @@ module "vpc" {
   source            = "./modules/vpc"
   cidr_block        = var.vpc_cidr
   region            = var.region
+  vpc_name          = var.vpc_name
 }
 
 # Módulo Subnets Públicas
@@ -27,6 +33,7 @@ module "public_subnets" {
   map_public_ip      = true
   region             = var.region
   type               = "public"
+  vpc_name           = var.vpc_name
 }
 
 # Módulo Subnets Privadas
@@ -38,4 +45,5 @@ module "private_subnets" {
   map_public_ip      = false
   region             = var.region
   type               = "private"
+  vpc_name           = var.vpc_name
 }
